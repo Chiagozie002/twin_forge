@@ -1,0 +1,21 @@
+<!DOCTYPE html><html lang="en" data-bs-theme="dark"><head><meta charset="utf-8"><link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg"><link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32.png"><link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png"><meta name="theme-color" content="#6D4AFF"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verify code - Twin Forge</title><meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
+<link href="../assets/css/main.css" rel="stylesheet"><link href="assets/css/auth.css" rel="stylesheet"></head>
+<body class="auth-body" data-page="verify">
+<main class="auth-panel">
+  <a class="brand mb-4 text-white" href="../index.html"><i class="fa-solid fa-bolt"></i>Twin Forge</a>
+  <ol class="auth-steps" id="stepsBox" aria-label="Recovery progress"><li class="done">Email</li><li class="on" aria-current="step">Code</li><li class="">Password</li></ol>
+  <div class="auth-badge" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></div>
+  <h1 class="h3">Check your email</h1><p class="small auth-sub">We sent a 6-digit code to <strong class="text-white" id="maskedEmail"></strong>. It expires in 10 minutes.</p>
+  <div class="demo-note" id="demoNote" role="status" hidden></div>
+  <form id="otpForm" novalidate class="mt-3"><div class="otp-row" role="group" aria-label="6-digit code"><input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" aria-label="Digit 1" autocomplete="one-time-code"><input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" aria-label="Digit 2" autocomplete="off"><input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" aria-label="Digit 3" autocomplete="off"><input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" aria-label="Digit 4" autocomplete="off"><input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" aria-label="Digit 5" autocomplete="off"><input type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" aria-label="Digit 6" autocomplete="off"></div>
+    <div class="field-error text-center" data-error-for="otp" aria-live="polite"></div><div class="mt-3"><button class="btn btn-wipe" type="submit"><span class="btn-label">Verify code</span></button></div>
+    <p class="small text-center mt-3 mb-0 auth-sub">Did not get it? <button class="link-btn" id="resend" type="button" disabled>Resend code <span id="cd"></span></button></p>
+    <p class="small text-center mt-2 mb-0"><a href="forgot-password.html">Use a different email</a></p></form>
+  
+</main>
+<script src="../assets/js/toast.js"></script><script src="../assets/js/api.js"></script><script src="../assets/js/validators.js"></script><script src="assets/js/recovery.js"></script>
+</body></html>

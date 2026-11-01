@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang="en" data-bs-theme="light"><head><meta charset="utf-8"><link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg"><link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png"><link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png"><meta name="theme-color" content="#6D4AFF"><meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
+<link href="assets/css/main.css" rel="stylesheet"><script src="assets/js/theme.js"></script>
+<title>Twin Forge - Digital products forged with precision</title>
+<meta name="description" content="Twin Forge builds websites, web applications and mobile apps."></head>
+<body>
+<!-- PRELOADER: branded, always dark; hidden by assets/js/preloader.js (CSS also hides it after 7s as a safety net) -->
+<div id="preloader" class="preloader" role="status" aria-label="Loading Twin Forge"><div class="pl-inner">
+  <div class="pl-mark" aria-hidden="true"><i class="fa-solid fa-bolt"></i><span class="pl-ring"></span><span class="pl-ring r2"></span></div>
+  <div class="pl-word" aria-hidden="true"><span style="--i:0">T</span><span style="--i:1">W</span><span style="--i:2">I</span><span style="--i:3">N</span><span class="gap" style="--i:4"></span><span style="--i:5">F</span><span style="--i:6">O</span><span style="--i:7">R</span><span style="--i:8">G</span><span style="--i:9">E</span></div>
+  <p class="pl-sub">Forging digital products</p><div class="pl-bar"><i id="plFill"></i></div><div class="pl-pct" id="plPct">0%</div></div></div>
+<noscript><style>#preloader{display:none}</style></noscript>
+
+<!-- START: PUBLIC NAVBAR -->
+<nav class="navbar fixed-top tf-nav" id="siteNav" aria-label="Main navigation"><div class="container">
+  <a class="brand" href="index.html"><i class="fa-solid fa-bolt"></i>Twin Forge</a>
+  <ul class="navbar-nav d-none d-lg-flex flex-row gap-1 mx-auto"><li class="nav-item"><a class="nav-link" href="index.html#home" data-spy="home">Home</a></li><li class="nav-item"><a class="nav-link" href="index.html#services" data-spy="services">Services</a></li><li class="nav-item"><a class="nav-link" href="index.html#projects" data-spy="projects">Projects</a></li><li class="nav-item"><a class="nav-link" href="index.html#about" data-spy="about">About</a></li><li class="nav-item"><a class="nav-link" href="index.html#founders" data-spy="founders">Co-Founders</a></li><li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li></ul>
+  <div class="d-flex align-items-center gap-2"><button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+    <button class="icon-btn d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#navMenu" aria-controls="navMenu" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button></div>
+</div></nav>
+<!-- Mobile menu sits OUTSIDE the nav so its backdrop and stacking order work (inside, it was hidden behind the backdrop) -->
+<div class="offcanvas offcanvas-end tf-offcanvas" tabindex="-1" id="navMenu" aria-labelledby="navMenuLabel">
+  <span class="oc-glow" aria-hidden="true"></span>
+  <div class="offcanvas-header"><a class="brand" id="navMenuLabel" href="index.html"><i class="fa-solid fa-bolt"></i>Twin Forge</a><button class="icon-btn" type="button" data-bs-dismiss="offcanvas" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button></div>
+  <div class="offcanvas-body d-flex flex-column"><p class="oc-label">Menu</p><ul class="navbar-nav tf-oc-links gap-1"><li class="nav-item" style="--i:0"><a class="nav-link" href="index.html#home" data-spy="home"><span class="oc-ic"><i class="fa-solid fa-house"></i></span>Home<i class="fa-solid fa-chevron-right oc-chev" aria-hidden="true"></i></a></li><li class="nav-item" style="--i:1"><a class="nav-link" href="index.html#services" data-spy="services"><span class="oc-ic"><i class="fa-solid fa-layer-group"></i></span>Services<i class="fa-solid fa-chevron-right oc-chev" aria-hidden="true"></i></a></li><li class="nav-item" style="--i:2"><a class="nav-link" href="index.html#projects" data-spy="projects"><span class="oc-ic"><i class="fa-solid fa-folder-open"></i></span>Projects<i class="fa-solid fa-chevron-right oc-chev" aria-hidden="true"></i></a></li><li class="nav-item" style="--i:3"><a class="nav-link" href="index.html#about" data-spy="about"><span class="oc-ic"><i class="fa-solid fa-circle-info"></i></span>About<i class="fa-solid fa-chevron-right oc-chev" aria-hidden="true"></i></a></li><li class="nav-item" style="--i:4"><a class="nav-link" href="index.html#founders" data-spy="founders"><span class="oc-ic"><i class="fa-solid fa-users"></i></span>Co-Founders<i class="fa-solid fa-chevron-right oc-chev" aria-hidden="true"></i></a></li><li class="nav-item" style="--i:5"><a class="nav-link" href="contact.html"><span class="oc-ic"><i class="fa-solid fa-envelope"></i></span>Contact Us<i class="fa-solid fa-chevron-right oc-chev" aria-hidden="true"></i></a></li></ul>
+    <div class="mt-auto pt-4 text-center oc-foot"><a class="btn btn-wipe" href="contact.html">Start a project <i class="fa-solid fa-arrow-right ms-1"></i></a>
+      <div class="oc-social"><a class="social-btn sm" href="#" data-social="linkedin" aria-label="LinkedIn (not configured)"><i class="fa-brands fa-linkedin-in"></i></a><a class="social-btn sm" href="#" data-social="x" aria-label="X (not configured)"><i class="fa-brands fa-x-twitter"></i></a><a class="social-btn sm" href="#" data-social="github" aria-label="GitHub (not configured)"><i class="fa-brands fa-github"></i></a><a class="social-btn sm" href="#" data-social="instagram" aria-label="Instagram (not configured)"><i class="fa-brands fa-instagram"></i></a><a class="social-btn sm" href="#" data-social="facebook" aria-label="Facebook (not configured)"><i class="fa-brands fa-facebook-f"></i></a></div><p class="small text-muted-tf mb-0">&copy; Twin Forge</p></div></div>
+</div>
+<!-- END: PUBLIC NAVBAR -->
+
+<!-- HERO -->
+<header class="hero" id="home"><div class="grid-bg"></div><div class="container"><div class="row align-items-center g-5">
+  <div class="col-lg-6 reveal"><span class="eyebrow"><i class="fa-solid fa-bolt"></i> Technology studio</span>
+    <h1 class="display-4 fw-bold mt-4">We forge digital products that <span class="grad">hold up</span> in the real world.</h1>
+    <p class="lead text-muted-tf mt-3">Websites, web applications and mobile apps - designed and engineered with the same care from first sketch to release.</p>
+    <div class="d-flex flex-wrap gap-3 mt-4 hero-actions"><a class="btn btn-wipe" href="#projects">Explore Our Work <i class="fa-solid fa-arrow-right ms-1"></i></a><a class="btn btn-ghost" href="#services">Our Services</a></div></div>
+  <div class="col-lg-6 reveal d-none d-sm-block"><div class="mock mx-auto" style="max-width:30rem" aria-hidden="true"><div class="dots"><span></span><span></span><span></span></div>
+    <div class="bar hl"></div><div class="bar" style="width:90%"></div><div class="bar" style="width:55%"></div><div class="bar hl" style="width:40%"></div><div class="bar" style="width:80%"></div>
+    <div class="chip" style="right:-.8rem;top:2.5rem"><i class="fa-solid fa-circle text-success"></i> Deploy live</div><div class="chip" style="left:-.8rem;bottom:2rem;animation-delay:-2s"><i class="fa-solid fa-code text-primary"></i> Clean code</div></div></div>
+</div></div></header>
+
+<!-- STATS: DEMO values, replace with real numbers. Count-up runs in assets/js/main.js -->
+<section class="py-4"><div class="container"><div class="row g-3 text-center">
+  <div class="col-4 reveal"><div class="stat"><b data-count="24">0</b><span>Projects (demo)</span></div></div>
+  <div class="col-4 reveal"><div class="stat"><b data-count="10" data-suffix="+">0</b><span>Years combined (demo)</span></div></div>
+  <div class="col-4 reveal"><div class="stat"><b data-count="3">0</b><span>Focus areas (demo)</span></div></div>
+</div></div></section>
+
+<!-- SERVICES (hardcoded, editable placeholders) -->
+<section class="section" id="services"><div class="container"><h2 class="display-6 fw-bold reveal">What we build</h2><p class="text-muted-tf reveal">Illustrative service descriptions - edit to match the real catalogue.</p>
+<div class="row g-4 mt-1">
+  <div class="col-sm-6 col-lg-3 reveal"><div class="tf-card"><div class="svc-ico"><i class="fa-solid fa-globe"></i></div><h3 class="h5">Websites</h3><p class="text-muted-tf small mb-0">Fast, responsive, accessible sites that represent your brand.</p></div></div>
+  <div class="col-sm-6 col-lg-3 reveal"><div class="tf-card"><div class="svc-ico"><i class="fa-solid fa-window-maximize"></i></div><h3 class="h5">Web Applications</h3><p class="text-muted-tf small mb-0">Dashboards and platforms backed by secure PHP and MySQL.</p></div></div>
+  <div class="col-sm-6 col-lg-3 reveal"><div class="tf-card"><div class="svc-ico"><i class="fa-solid fa-mobile-screen"></i></div><h3 class="h5">Mobile Apps</h3><p class="text-muted-tf small mb-0">Native-feeling apps for Android and iOS.</p></div></div>
+  <div class="col-sm-6 col-lg-3 reveal"><div class="tf-card"><div class="svc-ico"><i class="fa-solid fa-pen-ruler"></i></div><h3 class="h5">UI/UX Design</h3><p class="text-muted-tf small mb-0">Research-led interfaces that feel effortless to use.</p></div></div>
+</div></div></section>
+
+<!-- PROJECTS: filters, grid and pager are rendered by assets/js/projects.js -->
+<section class="section" id="projects"><div class="container"><h2 class="display-6 fw-bold">Selected work</h2><p class="text-muted-tf">Demo projects shown until the backend is connected.</p>
+  <div id="projectFilters" class="d-flex flex-wrap gap-2 my-4" aria-label="Project categories"></div>
+  <div id="projectGrid" class="row g-4" aria-live="polite"></div><div id="projectPager" class="d-flex justify-content-center gap-3 mt-4"></div></div></section>
+
+<!-- ABOUT: copy will load from ajax/settings/get.php (Website Settings) -->
+<section class="section" id="about"><div class="container"><div class="row align-items-center g-5">
+  <div class="col-lg-6 reveal"><div class="about-visual" aria-hidden="true"><i class="fa-solid fa-gem"></i></div></div>
+  <div class="col-lg-6 reveal"><span class="eyebrow">About</span><h2 class="display-6 fw-bold mt-3">Two founders. One standard of craft.</h2>
+    <p class="text-muted-tf" data-setting="about">Replaceable demo copy. Twin Forge is a product engineering studio that designs and builds digital solutions, from first sketch to a launched, maintainable product.</p>
+    <ul class="list-unstyled d-grid gap-2 mt-3"><li><i class="fa-solid fa-circle-check text-primary me-2"></i>Design and engineering under one roof</li><li><i class="fa-solid fa-circle-check text-primary me-2"></i>Secure, maintainable PHP and JavaScript</li><li><i class="fa-solid fa-circle-check text-primary me-2"></i>Clear communication at every stage</li></ul></div>
+</div></div></section>
+
+<!-- MISSION AND VISION (loads from Website Settings later) -->
+<section class="section pt-0"><div class="container"><div class="row g-4">
+  <div class="col-md-6 reveal"><div class="tf-card mv-card"><div class="svc-ico"><i class="fa-solid fa-bullseye"></i></div><h2 class="h4">Our mission</h2><p class="text-muted-tf mb-0" data-setting="mission">Demo copy: to turn ideas into dependable digital products that people enjoy using.</p></div></div>
+  <div class="col-md-6 reveal"><div class="tf-card mv-card"><div class="svc-ico"><i class="fa-solid fa-eye"></i></div><h2 class="h4">Our vision</h2><p class="text-muted-tf mb-0" data-setting="vision">Demo copy: to be a studio known for quality, honesty and lasting partnerships.</p></div></div>
+</div></div></section>
+
+<!-- CO-FOUNDERS: photo = assets/images/founders/founder-N.jpg (falls back to initials). Name, role and photo come from each founder's profile; bio from Website Settings. -->
+<section class="section pt-0" id="founders"><div class="container"><span class="eyebrow reveal">The team</span><h2 class="display-6 fw-bold mt-3 mb-4 reveal">Meet the co-founders</h2>
+<div class="row g-5">
+  <div class="col-md-6 reveal"><article class="f-card"><div class="f-frame"><svg class="f-ph" viewBox="0 0 120 150" aria-hidden="true"><circle cx="60" cy="50" r="27"/><path d="M8 150c0-36 22-58 52-58s52 22 52 58z"/></svg><img src="assets/images/founders/founder-1.jpg" alt="Portrait of Co-Founder One" width="640" height="800" loading="lazy" data-fallback></div>
+    <h3 class="h3 mt-4 mb-1">Co-Founder One</h3><div class="f-role">Co-Founder</div><div class="f-line"></div>
+    <p class="text-muted-tf mb-0">Short biography goes here. It is managed from Website Settings in the admin panel and shown in this space.</p></article></div>
+  <div class="col-md-6 reveal"><article class="f-card"><div class="f-frame"><svg class="f-ph" viewBox="0 0 120 150" aria-hidden="true"><circle cx="60" cy="50" r="27"/><path d="M8 150c0-36 22-58 52-58s52 22 52 58z"/></svg><img src="assets/images/founders/founder-2.jpg" alt="Portrait of Co-Founder Two" width="640" height="800" loading="lazy" data-fallback></div>
+    <h3 class="h3 mt-4 mb-1">Co-Founder Two</h3><div class="f-role">Co-Founder</div><div class="f-line"></div>
+    <p class="text-muted-tf mb-0">Short biography goes here. It is managed from Website Settings in the admin panel and shown in this space.</p></article></div>
+</div></div></section>
+
+<!-- MILESTONES: how every project moves from idea to launch -->
+<section class="section pt-0"><div class="container"><span class="eyebrow reveal">How we work</span><h2 class="display-6 fw-bold mt-3 mb-5 reveal">Milestones that guide every project</h2>
+<div class="ms-grid">
+  <div class="ms-item reveal"><span class="ms-num">01</span><h3 class="h5">Discover</h3><p class="text-muted-tf small mb-0">We listen first: goals, users and constraints, so the build starts on solid ground.</p></div>
+  <div class="ms-item reveal"><span class="ms-num">02</span><h3 class="h5">Design</h3><p class="text-muted-tf small mb-0">Interfaces shaped around real use, reviewed with you before a line of code ships.</p></div>
+  <div class="ms-item reveal"><span class="ms-num">03</span><h3 class="h5">Build</h3><p class="text-muted-tf small mb-0">Clean, secure and maintainable code with regular progress you can see.</p></div>
+  <div class="ms-item reveal"><span class="ms-num">04</span><h3 class="h5">Launch &amp; grow</h3><p class="text-muted-tf small mb-0">Release, measure and keep improving once real people are using it.</p></div>
+</div></div></section>
+
+<!-- PRODUCT CTA: word, background, orbs and button follow the chosen product (assets/js/cta.js). Button links to contact.html?type=... which preselects the form. -->
+<section class="section pt-0"><div class="container"><div class="cta reveal" id="cta" data-active="website">
+  <div class="cta-bgs" aria-hidden="true"><i class="bg-website on"></i><i class="bg-web-app"></i><i class="bg-mobile-app"></i><i class="bg-dashboard"></i></div>
+  <span class="orb o1"></span><span class="orb o2"></span>
+  <i class="fa-solid fa-code fl d-none d-md-block" style="left:8%;top:18%"></i><i class="fa-solid fa-mobile-screen fl d-none d-md-block" style="right:9%;bottom:20%;animation-delay:-2s"></i><i class="fa-solid fa-pen-ruler fl d-none d-md-block" style="right:20%;top:12%;animation-delay:-4s"></i>
+  <span class="eyebrow" style="color:var(--cy);border-color:rgba(34,211,238,.4)"><i class="fa-solid fa-bolt"></i> Let's build together</span>
+  <h2 class="display-5 fw-bold mt-4">Have a <span class="swap"><span class="word grad" id="ctaWord">website</span></span> in mind?</h2>
+  <p class="lead mx-auto mt-3 mb-4" style="max-width:36rem;color:#cfc9ee">Pick what you want to build. We will help you shape it and take it all the way to launch.</p>
+  <div class="cta-picks" role="group" aria-label="What would you like to build?">
+    <button type="button" data-key="website" aria-pressed="true"><i class="fa-solid fa-globe"></i>Website</button><button type="button" data-key="web-app" aria-pressed="false"><i class="fa-solid fa-window-maximize"></i>Web app</button>
+    <button type="button" data-key="mobile-app" aria-pressed="false"><i class="fa-solid fa-mobile-screen"></i>Mobile app</button><button type="button" data-key="dashboard" aria-pressed="false"><i class="fa-solid fa-chart-line"></i>Dashboard</button></div>
+  <div class="d-flex flex-wrap gap-3 justify-content-center cta-actions"><a class="btn btn-wipe btn-lg" id="ctaBtn" href="contact.html?type=website"><span id="ctaBtnText">Start your website</span> <i class="fa-solid fa-arrow-right ms-1"></i></a><a class="btn-ghost-light btn-lg" href="#projects">See our work</a></div>
+</div></div></section>
+
+<!-- START: PUBLIC FOOTER -->
+<footer class="tf-footer"><div class="container"><div class="row g-4">
+  <div class="col-lg-5"><a class="brand mb-3" href="index.html"><i class="fa-solid fa-bolt"></i>Twin Forge</a><p class="text-muted-tf">We design and build websites, web apps and mobile products with a consistent standard of craft.</p>
+    <div class="d-flex gap-2"><!-- REPLACE the "#" hrefs with real social profile URLs. -->
+      <a class="icon-btn d-grid place-items-center text-center pt-2" href="#" data-social="linkedin" aria-label="LinkedIn (not configured)"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a class="icon-btn text-center pt-2" href="#" data-social="x" aria-label="X (not configured)"><i class="fa-brands fa-x-twitter"></i></a>
+      <a class="icon-btn text-center pt-2" href="#" data-social="github" aria-label="GitHub (not configured)"><i class="fa-brands fa-github"></i></a></div></div>
+  <div class="col-6 col-lg-3 offset-lg-1"><h4 class="h6">Explore</h4><ul class="list-unstyled d-grid gap-1"><li><a href="index.html#services">Services</a></li><li><a href="index.html#projects">Projects</a></li><li><a href="index.html#about">About</a></li></ul></div>
+  <div class="col-6 col-lg-3"><h4 class="h6">Company</h4><ul class="list-unstyled d-grid gap-1"><li><a href="index.html#founders">Co-Founders</a></li><li><a href="contact.html">Contact Us</a></li></ul></div></div>
+  <hr style="border-color:var(--line)"><p class="small text-muted-tf mb-0">© <span id="yr"></span> Twin Forge. All rights reserved.</p></div></footer>
+<!-- END: PUBLIC FOOTER -->
+
+<!-- Single reusable project modal -->
+<div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="pmTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"><div class="modal-content" style="background:var(--card);border-color:var(--line)">
+  <div class="pm-img"><img id="pmImg" alt="" hidden><i class="fa-solid fa-layer-group" id="pmIcon" aria-hidden="true"></i></div>
+  <div class="modal-header border-0"><div><span class="cat-pill position-static" id="pmCat" style="display:inline-block"></span><h2 class="h4 mt-2 mb-0" id="pmTitle"></h2></div><button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+  <div class="modal-body"><p id="pmDesc" class="text-muted-tf"></p><h3 class="h6">Technologies</h3><div id="pmTech"></div></div>
+  <div class="modal-footer border-0 justify-content-start gap-2" id="pmActions"></div></div></div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="assets/js/toast.js"></script><script src="assets/js/api.js"></script><script src="assets/js/validators.js"></script><script src="assets/js/demo-data.js"></script><script src="assets/js/projects.js"></script><script src="assets/js/main.js"></script><script src="assets/js/navbar.js"></script><script src="assets/js/cta.js"></script><script src="assets/js/preloader.js"></script>
+<script src="assets/js/site-content.js"></script><script>document.getElementById('yr').textContent=new Date().getFullYear()</script></body></html>
