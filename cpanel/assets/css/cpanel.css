@@ -82,11 +82,47 @@
   .cp-side>*{position:relative}
   .cp-side .offcanvas-header{border-bottom:1px solid var(--line);padding:.9rem 1.1rem}
   .cp-side.show .cp-link,.cp-side.show .cp-side-user{animation:ocInL .5s cubic-bezier(.2,1,.3,1) both}
-  .cp-side.show nav .cp-link:nth-child(1){animation-delay:0.17s}
-  .cp-side.show nav .cp-link:nth-child(2){animation-delay:0.22s}
-  .cp-side.show nav .cp-link:nth-child(3){animation-delay:0.27s}
-  .cp-side.show nav .cp-link:nth-child(4){animation-delay:0.32s}
-  .cp-side.show nav .cp-link:nth-child(5){animation-delay:0.37s}
-  .cp-side.show nav .cp-link:nth-child(6){animation-delay:0.42s}
-  .cp-side.show nav .cp-link:nth-child(7){animation-delay:0.47s}
 }
+
+/* ===== DASHBOARD: lists must never be wider than their card ===== */
+.cp-main,.cp-content{min-width:0}.cp-content .row>*{min-width:0}
+.dash-card{min-width:0}
+.dash-list{display:flex;flex-direction:column;min-width:0}
+.dash-row{min-width:0;max-width:100%}
+.dash-side{max-width:45%}
+.cat-chip{max-width:7.5rem;overflow:hidden;text-overflow:ellipsis}
+
+/* ===== ADMIN SIDEBAR v2: grouped menu, icon tiles, gradient active pill, glow ===== */
+.cp-side{overflow:hidden;background:var(--card);background:linear-gradient(180deg,var(--card),color-mix(in srgb,var(--card) 90%,var(--vio)))}
+.cp-side::before{content:"";position:absolute;width:15rem;height:15rem;left:-6rem;top:-5rem;border-radius:50%;background:rgba(109,74,255,.3);filter:blur(65px);pointer-events:none}
+.cp-side::after{content:"";position:absolute;width:12rem;height:12rem;right:-7rem;bottom:2rem;border-radius:50%;background:rgba(34,211,238,.16);filter:blur(60px);pointer-events:none}
+.cp-side>*{position:relative;z-index:1}
+.cp-side-in{display:flex;flex-direction:column;height:100%;width:100%;padding:1.1rem .85rem;overflow-y:auto;overflow-x:hidden}
+.cp-side-in .brand{padding:0 .4rem}
+a.cp-side-user{text-decoration:none;color:var(--fg);transition:transform .2s,box-shadow .2s}
+a.cp-side-user:hover{transform:translateY(-2px);box-shadow:0 14px 26px -16px var(--vio);color:var(--fg)}
+.cp-nav{display:flex;flex-direction:column;gap:.2rem}
+.cp-label{margin:.9rem .55rem .35rem}.cp-nav .cp-label:first-child{margin-top:.2rem}
+.cp-link{position:relative;gap:.8rem;padding:.5rem .6rem;border-radius:.95rem;font-size:.93rem;color:var(--muted);transition:background .2s,color .2s,transform .2s,box-shadow .2s}
+.cp-link i{flex:none;width:2.1rem;height:2.1rem;display:grid;place-items:center;border-radius:.7rem;background:var(--lav);color:var(--vio);font-size:.85rem;transition:background .25s,color .25s,transform .25s}
+.cp-link:hover{background:color-mix(in srgb,var(--lav) 70%,transparent);color:var(--fg);transform:translateX(3px)}
+.cp-link:hover i{background:var(--vio);color:#fff;transform:rotate(-8deg) scale(1.06)}
+.cp-link.active{background:linear-gradient(135deg,var(--vio),#8b6dff 62%,#4f8bff);color:#fff;box-shadow:0 14px 26px -14px var(--vio);transform:none}
+.cp-link.active i{background:rgba(255,255,255,.22);color:#fff;transform:none}
+.cp-link.danger{color:#ef4444}.cp-link.danger i{background:rgba(239,68,68,.12);color:#ef4444}
+.cp-link.danger:hover{background:rgba(239,68,68,.1);color:#ef4444}.cp-link.danger:hover i{background:#ef4444;color:#fff}
+.cp-side-foot{margin-top:auto;padding-top:.8rem;border-top:1px solid var(--line);display:grid;gap:.2rem}
+@media(max-width:991.98px){
+  .cp-side.show .cp-label,.cp-side.show .cp-link,.cp-side.show .cp-side-user{animation:ocInL .5s cubic-bezier(.2,1,.3,1) both;animation-delay:calc(var(--i,0) * 40ms + 100ms)}
+}
+
+/* Short phones: tighten the admin menu so Visit Website / Logout stay on screen */
+@media(max-width:991.98px) and (max-height:760px){
+  .cp-side-in{padding:.8rem .75rem}
+  .cp-side-user{padding:.55rem;margin-bottom:.35rem}.cp-side-user .avatar-md{width:2.5rem;height:2.5rem;font-size:1rem}
+  .cp-label{margin:.55rem .55rem .25rem}
+  .cp-link{padding:.32rem .55rem}.cp-link i{width:1.85rem;height:1.85rem}
+  .cp-side-foot{padding-top:.45rem}
+}
+/* Phones: give project names the room (the category is already visible on the Projects page) */
+@media(max-width:575.98px){.dash-side .cat-chip{display:none}}

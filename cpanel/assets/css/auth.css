@@ -1,8 +1,8 @@
 /* Authentication pages: always dark, never themed. Loaded after ../assets/css/main.css */
-.auth-body{min-height:100vh;display:grid;place-items:center;padding:1.5rem;background:radial-gradient(circle at 20% 10%,rgba(109,74,255,.35),transparent 40%),radial-gradient(circle at 85% 85%,rgba(34,211,238,.16),transparent 38%),#0B0918;color:#F8F7FF;position:relative;overflow:hidden}
-.auth-body::before{content:"";position:absolute;inset:0;background-image:radial-gradient(1.5px 1.5px at 20px 30px,#fff,transparent),radial-gradient(1px 1px at 90px 120px,#A78BFA,transparent),radial-gradient(1.5px 1.5px at 160px 60px,#22D3EE,transparent);background-size:200px 200px;opacity:.35;animation:drift 90s linear infinite}
+.auth-body{min-height:100vh;min-height:100dvh;display:grid;place-items:center;padding:1.5rem;background:radial-gradient(circle at 20% 10%,rgba(109,74,255,.35),transparent 40%),radial-gradient(circle at 85% 85%,rgba(34,211,238,.16),transparent 38%),#0B0918;color:#F8F7FF;position:relative;overflow-x:hidden;grid-template-columns:minmax(0,1fr)}
+.auth-body::before{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(1.5px 1.5px at 20px 30px,#fff,transparent),radial-gradient(1px 1px at 90px 120px,#A78BFA,transparent),radial-gradient(1.5px 1.5px at 160px 60px,#22D3EE,transparent);background-size:200px 200px;opacity:.35;animation:drift 90s linear infinite}
 @keyframes drift{to{background-position:-400px 400px}}
-.auth-panel{position:relative;width:min(100%,26rem);background:rgba(23,19,47,.72);backdrop-filter:blur(16px);border:1px solid rgba(167,139,250,.28);border-radius:1.5rem;padding:2.2rem;box-shadow:0 30px 80px -30px rgba(109,74,255,.7)}
+.auth-panel{position:relative;z-index:1;min-width:0;margin-inline:auto;width:min(100%,26rem);background:rgba(23,19,47,.72);backdrop-filter:blur(16px);border:1px solid rgba(167,139,250,.28);border-radius:1.5rem;padding:2.2rem;box-shadow:0 30px 80px -30px rgba(109,74,255,.7)}
 .auth-panel .form-control{background:rgba(11,9,24,.7);border-color:#2c2650;color:#F8F7FF}
 .auth-panel .form-control::placeholder{color:#6f6a94}
 .auth-panel a{color:var(--cy);text-decoration:none}
@@ -21,7 +21,7 @@
 .auth-steps li.done{color:var(--soft);border-color:var(--vio)}.auth-steps li.on{color:var(--cy);border-color:var(--cy)}
 .demo-note{border:1px dashed rgba(167,139,250,.5);border-radius:.8rem;padding:.6rem .8rem;font-size:.8rem;color:#d8d3f5;background:rgba(109,74,255,.12);margin-bottom:1rem}
 .otp-row{display:flex;gap:.5rem;justify-content:center;margin:1.2rem 0 .4rem}
-.otp-row input{flex:1;min-width:0;max-width:3rem;height:3.4rem;text-align:center;font:700 1.4rem 'Space Grotesk';border-radius:.8rem;border:1px solid #2c2650;background:rgba(11,9,24,.7);color:#F8F7FF;caret-color:var(--cy);padding:0}
+.otp-row input{flex:1;width:0;min-width:0;max-width:3rem;height:3.4rem;text-align:center;font:700 1.4rem 'Space Grotesk';border-radius:.8rem;border:1px solid #2c2650;background:rgba(11,9,24,.7);color:#F8F7FF;caret-color:var(--cy);padding:0}
 .otp-row input:focus{border-color:var(--cy);box-shadow:0 0 0 .2rem rgba(34,211,238,.2);outline:0}
 .otp-row.shake{animation:shake .4s}
 @keyframes shake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}

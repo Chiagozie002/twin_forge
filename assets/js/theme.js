@@ -3,8 +3,11 @@
   const KEY = document.documentElement.dataset.themeKey || 'tf-theme', root = document.documentElement;
   const get = () => { try { return localStorage.getItem(KEY); } catch { return null; } };
   const set = v => { try { localStorage.setItem(KEY, v); } catch { /* storage unavailable: ignore */ } };
+  /* The button shows what you will switch TO: a light bulb in dark mode (turn the lights on), a moon in light mode. */
   const apply = t => { root.setAttribute('data-bs-theme', t);
-    const i = document.querySelector('#themeToggle i'); if (i) i.className = t === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon'; };
+    const btn = document.getElementById('themeToggle'), i = btn && btn.querySelector('i');
+    if (i) i.className = t === 'dark' ? 'fa-solid fa-lightbulb' : 'fa-solid fa-moon';
+    if (btn) { const label = t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'; btn.setAttribute('aria-label', label); btn.title = label; } };
   apply(get() || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
   document.addEventListener('DOMContentLoaded', () => apply(root.getAttribute('data-bs-theme')));   // refresh icon once DOM exists
   document.addEventListener('click', e => {

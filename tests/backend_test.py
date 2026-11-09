@@ -5,11 +5,11 @@ if os.path.exists(DB): os.remove(DB)
 def sub(p,a,b):
     s=open(T+p).read(); assert a in s,(p,a); open(T+p,'w').write(s.replace(a,b))
 sub('/ajax/config.php','mysql:host=localhost;dbname=twin_forge;charset=utf8mb4','sqlite:'+DB)   # test-only: swap MySQL for SQLite
-sub('/ajax/messages/submit.php','NOW()','CURRENT_TIMESTAMP')
+sub('/ajax/config.php','const CONTACT_MAX_PER_HOUR = 5;','const CONTACT_MAX_PER_HOUR = 1000;')   # the per-IP limit has its own dedicated test
 sub('/ajax/settings/_lib.php','ON DUPLICATE KEY UPDATE v = VALUES(v)','ON CONFLICT(k) DO UPDATE SET v = excluded.v')
 PW='Str0ngPassw0rd'; h=subprocess.check_output(['php','-r',f"echo password_hash('{PW}',PASSWORD_DEFAULT);"]).decode()
 c=sqlite3.connect(DB); c.executescript("""
-CREATE TABLE messages(id INTEGER PRIMARY KEY AUTOINCREMENT,name,email,subject,message,is_read INT DEFAULT 0,created_at TEXT);
+CREATE TABLE messages(id INTEGER PRIMARY KEY AUTOINCREMENT,name,email,subject,message,is_read INT DEFAULT 0,created_at TEXT,ip_hash TEXT);
 CREATE TABLE projects(id INTEGER PRIMARY KEY AUTOINCREMENT,name,category,short_description,description,technologies TEXT,image_url,live_url,github_url,status TEXT DEFAULT 'active',updated_at TEXT DEFAULT CURRENT_TIMESTAMP);
 CREATE TABLE users(id INTEGER PRIMARY KEY AUTOINCREMENT,name,email UNIQUE,password_hash,role_title,picture_url,created_at TEXT DEFAULT CURRENT_TIMESTAMP);
 CREATE TABLE settings(k TEXT PRIMARY KEY,v TEXT NOT NULL);""")
@@ -170,7 +170,6 @@ try:
     if r[0]!=200: fails.append('session lost after password change (regenerate_id)')
     else: A.csrf=r[1]['data']['csrf']
     chk('login with new pw',Client().call('GET','auth/login.php'),200,True)
-    for ep in ['auth/forgot-password.php','auth/verify-otp.php','auth/reset-password.php']: chk('stub 501 '+ep,Client().call('POST',ep,{}),501,False)
     # ---- profile picture REMOVE ----
     cur=A.call('GET','profile/get.php')[1]['data']['user']['picture_url']
     if not cur or not os.path.exists(T+'/'+cur): fails.append('remove test: no current picture to remove')

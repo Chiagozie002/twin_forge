@@ -17,8 +17,8 @@ $in = input(); $email = trim((string)($in['email'] ?? '')); $pass = (string)($in
 if (!filter_var($email, FILTER_VALIDATE_EMAIL) || $pass === '' || strlen($pass) > 200) respond(false, 'Enter a valid email and password.', [], [], 422);
 
 try {
-    $st = db()->prepare('SELECT id, password_hash FROM users WHERE email = ? LIMIT 1');   // prepared = injection-safe
-    $st->execute([$email]); $u = $st->fetch();
+    $st = db()->prepare('SELECT id, password_hash FROM users WHERE LOWER(email) = ? LIMIT 1');   // prepared = injection-safe; case-insensitive on every database
+    $st->execute([strtolower($email)]); $u = $st->fetch();
 
     // 3. Always run password_verify (even for unknown emails) so response time does not reveal which emails exist.
     $hash = $u['password_hash'] ?? password_hash('timing-equaliser', PASSWORD_DEFAULT);
